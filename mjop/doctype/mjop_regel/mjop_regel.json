@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "creation": "2026-03-15 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Child Table",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bouwdeel",
+  "maatregel",
+  "column_break_basis",
+  "jaar",
+  "kosten_eur",
+  "section_detail",
+  "prioriteit",
+  "tijdcategorie",
+  "column_break_detail",
+  "herhaalperiode_jaren",
+  "gebrek_ref",
+  "toelichting"
+ ],
+ "fields": [
+  {
+   "fieldname": "bouwdeel",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bouwdeel",
+   "options": "Bouwdeel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maatregel",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Maatregel",
+   "reqd": 1,
+   "description": "Omschrijving van de uit te voeren onderhoudsmaatregel"
+  },
+  {
+   "fieldname": "column_break_basis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "jaar",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Jaar",
+   "reqd": 1,
+   "description": "Uitvoeringsjaar binnen de MJOP-looptijd"
+  },
+  {
+   "fieldname": "kosten_eur",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Kosten (€)",
+   "reqd": 1,
+   "description": "Geraamde uitvoeringskosten inclusief BTW"
+  },
+  {
+   "fieldname": "section_detail",
+   "fieldtype": "Section Break",
+   "label": "Detail"
+  },
+  {
+   "fieldname": "prioriteit",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Prioriteit",
+   "options": "Kritiek\nErnstig\nMatig\nGering",
+   "default": "Matig",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tijdcategorie",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tijdcategorie",
+   "options": "Direct ingrijpen\nKort termijn (1-2 jaar)\nMiddellange termijn (3-5 jaar)\nLange termijn (6-10 jaar)\nRegulair onderhoud",
+   "default": "Regulier onderhoud",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_detail",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "herhaalperiode_jaren",
+   "fieldtype": "Int",
+   "label": "Herhaalperiode (jaren)",
+   "description": "0 = eenmalig; >0 = cyclisch onderhoud om de N jaar"
+  },
+  {
+   "fieldname": "bevinding_ref",
+   "fieldtype": "Link",
+   "label": "Bevinding (referentie)",
+   "options": "Bevinding",
+   "description": "Koppeling aan de bevinding die deze maatregel vereist"
+  },
+  {
+   "fieldname": "toelichting",
+   "fieldtype": "Text",
+   "label": "Toelichting"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-15 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mjop",
+ "name": "Mjop Regel",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "jaar",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

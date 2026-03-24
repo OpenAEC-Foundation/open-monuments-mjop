@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "MJOP-{monument}-{looptijd_start}",
+ "creation": "2026-03-15 00:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "monument",
+  "status",
+  "column_break_basis",
+  "looptijd_start",
+  "looptijd_eind",
+  "section_kosten",
+  "totaalkosten_eur",
+  "column_break_kosten",
+  "gem_kosten_per_jaar_eur",
+  "section_regels",
+  "regels",
+  "section_opmerkingen",
+  "opmerkingen"
+ ],
+ "fields": [
+  {
+   "fieldname": "monument",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Monument",
+   "options": "Monument",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Concept\nActief\nAfgesloten\nGearchiveerd",
+   "default": "Concept",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "looptijd_start",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Looptijd — beginjaar",
+   "reqd": 1,
+   "description": "Eerste planningsjaar (bijv. 2026)"
+  },
+  {
+   "fieldname": "looptijd_eind",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Looptijd — eindjaar",
+   "reqd": 1,
+   "description": "Laatste planningsjaar (bijv. 2036)"
+  },
+  {
+   "fieldname": "section_kosten",
+   "fieldtype": "Section Break",
+   "label": "Kostenberekening"
+  },
+  {
+   "fieldname": "totaalkosten_eur",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Totaalkosten (€)",
+   "read_only": 1,
+   "description": "Automatisch berekend op basis van MjopRegels"
+  },
+  {
+   "fieldname": "column_break_kosten",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gem_kosten_per_jaar_eur",
+   "fieldtype": "Currency",
+   "label": "Gemiddeld per jaar (€)",
+   "read_only": 1,
+   "description": "Totaalkosten gedeeld door looptijd in jaren"
+  },
+  {
+   "fieldname": "section_regels",
+   "fieldtype": "Section Break",
+   "label": "Onderhoudsregels"
+  },
+  {
+   "fieldname": "regels",
+   "fieldtype": "Table",
+   "label": "Onderhoudsregels",
+   "options": "Mjop Regel"
+  },
+  {
+   "fieldname": "section_opmerkingen",
+   "fieldtype": "Section Break",
+   "label": "Opmerkingen"
+  },
+  {
+   "fieldname": "opmerkingen",
+   "fieldtype": "Text",
+   "label": "Opmerkingen"
+  }
+ ],
+ "links": [],
+ "modified": "2026-03-15 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mjop",
+ "name": "Mjop",
+ "naming_rule": "Expression (old-style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Monumentenwachter",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "search_fields": "monument,status,looptijd_start",
+ "sort_field": "looptijd_start",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "monument",
+ "track_changes": 1
+}
